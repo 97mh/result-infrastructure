@@ -11,7 +11,7 @@ import java.util.Map;
 
 public class RequestLocaleResolver implements LocaleResolver {
 
-    private static final String PARAM = "locale";
+    public static final String PARAM = "locale";
 
     private static final Map<String, Locale> localeMap = Maps.newConcurrentMap();
 
