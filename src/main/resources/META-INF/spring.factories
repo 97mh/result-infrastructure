@@ -1,3 +1,4 @@
 # Auto Configure
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-org.infrastructure.result.autoconfigure.ResultAutoConfiguration
+org.infrastructure.result.autoconfigure.ResultAutoConfiguration,\
+org.infrastructure.result.autoconfigure.WebSupportAutoConfiguration

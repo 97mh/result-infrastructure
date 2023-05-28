@@ -1,6 +1,7 @@
 package org.infrastructure.result;
 
 import org.infrastructure.result.exception.BusinessCodeException;
+import org.infrastructure.result.i18n.LocaleUtils;
 import org.springframework.context.i18n.LocaleContextHolder;
 
 import java.util.Locale;
@@ -43,12 +44,12 @@ public interface R {
 
     static <T> CodedMessage<T> custom(Integer code, String message) {
         // 默认不使用多语言, 直接使用传递进来的语言文本
-        Boolean enableMultiLanguage = SpringContext.enableMultiLanguage;
+        Boolean enableMultiLanguage = LocaleUtils.enableMultiLanguage;
         if (enableMultiLanguage == null || !enableMultiLanguage) {
             return new CodedMessage<>(code, message);
         }
 
-        String localeText = SpringContext.getLocaleText(code.toString());
+        String localeText = LocaleUtils.getLocaleText(code.toString());
         return new CodedMessage<>(code, localeText);
     }
 
